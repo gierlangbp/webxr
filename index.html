@@ -13,7 +13,7 @@
     
     
       
-        <title>Getting Started - WebXR for Beginners</title>
+        <title>Definition - WebXR for Beginners</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#xr-vr-ar-and-mr" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Definition
             
           </span>
         </div>
@@ -179,14 +179,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -207,11 +209,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="definition/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Definition
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
         Definition
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defining-virtual-reality" class="md-nav__link">
+    Defining Virtual Reality
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#degree-of-immersion" class="md-nav__link">
+    Degree of Immersion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -229,16 +279,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -259,59 +307,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Getting Started
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="getting-started/" class="md-nav__link">
         Getting Started
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-geometries" class="md-nav__link">
-    Adding Geometries
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -325,6 +325,20 @@
     <li class="md-nav__item">
       <a href="interaction/" class="md-nav__link">
         Interaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="target/" class="md-nav__link">
+        Target Interaction
       </a>
     </li>
   
@@ -364,15 +378,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
+  <a href="#defining-virtual-reality" class="md-nav__link">
+    Defining Virtual Reality
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-geometries" class="md-nav__link">
-    Adding Geometries
+  <a href="#degree-of-immersion" class="md-nav__link">
+    Degree of Immersion
   </a>
   
 </li>
@@ -392,75 +406,27 @@
                   
 
 
-<h1 id="introduction">Introduction</h1>
-<h2 id="getting-started">Getting Started</h2>
-<p>Aframe is an HTML-based framework that can be used to create WebXR applications through simple HTML scripting. Because it uses HTML as its interface, every command can be accessed by simply inserting its html tag.
-Let's start with a basic html structure and insert <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tag.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>To access Aframe, we need to link it through <code>&lt;script&gt;</code> tag inside the <code>&lt;head&gt;</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://aframe.io/releases/1.3.0/aframe.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<h2 id="adding-geometries">Adding Geometries</h2>
-<p>Inside the <code>&lt;body&gt;</code> tag, we should add <code>&lt;a-scene&gt;</code> tag. It is required to define the area where we create an Aframe scene. Note that the Aframe tag is similar to regular html tag, but it is preceded with <strong>"a"</strong>. Next, we can start by inserting several objects. Let’s start by adding primitive geometries into the scene.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://aframe.io/releases/1.3.0/aframe.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="p">&lt;</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>      <span class="p">&lt;</span><span class="nt">a-box</span><span class="p">&gt;&lt;/</span><span class="nt">a-box</span><span class="p">&gt;</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>In the example above, I added a primitive box inside the scene. When we try to run the page in the browser, we might not be able to see anything. First, we have not defined the color so the object looks white like the background. Second, the object is not directly visible to the camera. We have to rotate the camera to be able to see the primitive box.
-Next, let’s add color and change the position of the box. I will add <code>position</code> and <code>color</code> as an attribute of <code>&lt;a-box&gt;</code> tag. The position follows the coordinates of <code>x y z</code>. I will set the z coordinate -5 from the default position.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://aframe.io/releases/1.3.0/aframe.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">&lt;</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      <span class="p">&lt;</span><span class="nt">a-box</span> <span class="na">position</span><span class="o">=</span><span class="s">&quot;0 0 -5&quot;</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a-box</span><span class="p">&gt;</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Now if we refresh the page, we would be able to see a red box. Notice that by changing the z coordinate, we move the box backward (hence the negative value) from the default camera position.</p>
-<p>There are several other primitive geometries that you can insert into Aframe. You can check the list and their attributes in the documentation page. Play around with primitives and their attributes to get the hang of creating objects with Aframe!</p>
-<div class="admonition aframe documentation">
-<p class="admonition-title">Aframe</p>
-<p>Check out the full documentation on Aframe in the link below.</p>
-<p><a href="https://aframe.io/docs/1.3.0/introduction/" target="_blank">A-frame 1.3.0 Documentation</a></p>
-<p>Check the left bar (if you open the page on a desktop), then scroll down to PRIMITIVES section. Pay attention that different primitive geometries have their own attributes.</p>
-</div>
-<p>List of PRIMITIVES geometries:</p>
+<h1 id="xr-vr-ar-and-mr">XR, VR, AR, and MR</h1>
+<h2 id="defining-virtual-reality">Defining Virtual Reality</h2>
+<p>There are many ways to define virtual reality. I broadly categorize the definitions into two definitions. The first definition refers to <em>computer-generated digital environment that can be experienced and interacted with as if that environment were real</em>. This definition is broad as it encompasses any environment that is digitally simulated by any devices as virtual reality. It includes smartphone, tablet, desktop PC, and various gaming consoles. As long as the devices are capable to provide interactions and experiences that deceive the mind to perceive as it were real, then the digitally simulated reality inside the device is a virtual reality.</p>
+<p>The second definition is more strict and particularly related with the emerging virtual reality (VR) headsets technology. The second definition defines virtual reality as <em>cutting edge sensory immersive technologies which use head-mounted displays and an elaborate array of body sensors in order to enhance, elaborate, and expand our sensory interaction with new media objects</em>. Head-mounted displays are highlighted as it offers the capabilities to block our view to the surrounding environment, hence we believe that we have been transported to another reality. The availability of various kinds of sensors allows the head-mounted display to synchronize our movement inside the digitally simulated reality. Thus, we seamlessly fooled as if we were moving inside the virtual reality.</p>
+<p>Among these two definitions, many discussions tend to associate virtual reality with the digitally simulated reality inside the VR headsets. The reason is because VR headsets provide higher immersion degree that is capable to transport our presence to another reality. As our peripheral vision is blocked, our visual sensory is fixated into the display inside the VR headsets.</p>
+<p>We also have to distinguish virtual reality (VR) from augmented reality (AR). The main difference is the degree of virtuality. By referring to the Reality-Virtuality (RV) Continuum by Milgram and Kishino, VR contains set of virtualized environments. Users are immersed inside digitally generated environment inside the VR. On the other side of the spectrum is the AR. Users mostly see real world objects and environments. Virtual objects are projected on top of the real world. In between the virtual and augmented reality is the mixed reality (MR). Using special headset, virtual environments and objects are visible as user interacts in the real world.</p>
+<p><img alt="Virtuality Continuum" src="/img/virtuality_continuum.png" />
+<em>Virtuality Continuum (VC) adapted from Milgram and F. Kishino, "A taxonomy of mixed reality visual displays," IEICE Transactions on Information and Systems, Vols. E77-D, no. 12, pp. 1321-1329, 1994. Virtual reality was mentioned as Augmented Virtuality (AV)</em></p>
+<p>Burdea and Coiffet (2003) explained that VR has three properties:</p>
+<ol>
+<li>Interactivity, where users interact with the object on the screen in real-time, allows them to modify the virtual world instantaneously.</li>
+<li>Immersion as modification of the virtual world involves sensorial modalities that make the experience captivating. Hence, users immerse themselves in the virtual world.</li>
+<li>Imagination, which is related to our mind's capacity to perceive the simulated realities inside the virtual world as existing.</li>
+</ol>
+<h2 id="degree-of-immersion">Degree of Immersion</h2>
+<p>Immersion in VR involves various sensorial modalities: visual, acoustics, haptics, and motion. Multiple devices offer multitude of sensory feedback. It results in various immersion degree, ranges from low to high immersion. In visual category, monitor display are in the low immersion spectrum. While users can interact with the virtual objects and environments through the monitor, user's periphery still capture real world objects that makes the experience less immersive. Head mounted device (HMD) that blocks the periphery of the visual senses enable higher immersion by isolating the vision from its surrounding environments. At the highest end of the immersion is CAVE and Powerwall. Instead of using wearable devices to see the VR, virtual environments and objects are projected onto the real world. The externalization of virtual environments offers natural interaction on a 1-to-1 human scale. Wearable devices may be needed to enable the sense of depth from the projected stereoscopic images.</p>
+<p><img alt="Degree of Immersion" src="/img/degree_of_immersion.png" />
+<em>The degree of Immersion redrawn from Carrozzino and M. Bergamasco, "Beyond virtual museums: Experiencing immersive virtual reality in real museums," Journal of Cultural Heritage, vol. 11, no. 4, pp. 452-458, 2010.</em></p>
+<h1 id="references">References</h1>
 <ul>
-<li><code>&lt;a-box&gt;</code></li>
-<li><code>&lt;a-circle&gt;</code></li>
-<li><code>&lt;a-cylinder&gt;</code></li>
-<li><code>&lt;a-octahedron&gt;</code></li>
-<li><code>&lt;a-plane&gt;</code></li>
-<li><code>&lt;a-ring&gt;</code></li>
-<li><code>&lt;a-sphere&gt;</code></li>
-<li><code>&lt;a-tetrahedron&gt;</code></li>
-<li><code>&lt;a-torus-knot&gt;</code></li>
-<li><code>&lt;a-torus&gt;</code></li>
-<li><code>&lt;a-triangle&gt;</code></li>
+<li>C. Burdea and P. Coiffet, Virtual Reality Technology, 2nd Edition, Wiley-IEEE Press, 2003.</li>
 </ul>
 
 
@@ -481,30 +447,15 @@ Next, let’s add color and change the position of the box. I will add <code>pos
     
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
-        
-        <a href="definition/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Definition" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Definition
-            </div>
-          </div>
-        </a>
-      
       
         
-        <a href="interaction/" class="md-footer__link md-footer__link--next" aria-label="Next: Interaction" rel="next">
+        <a href="getting-started/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Interaction
+              Getting Started
             </div>
           </div>
           <div class="md-footer__button md-icon">

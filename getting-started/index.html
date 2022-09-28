@@ -13,7 +13,7 @@
     
     
       
-        <title>Interaction - WebXR for Beginners</title>
+        <title>Getting Started - WebXR for Beginners</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interaction" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Interaction
+              Getting Started
             
           </span>
         </div>
@@ -259,20 +259,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
-        Getting Started
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -285,12 +271,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Interaction
+          Getting Started
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Interaction
+        Getting Started
       </a>
       
         
@@ -309,15 +295,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#event-set" class="md-nav__link">
-    Event Set
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-cursor" class="md-nav__link">
-    Adding Cursor
+  <a href="#adding-geometries" class="md-nav__link">
+    Adding Geometries
   </a>
   
 </li>
@@ -326,6 +312,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        Interaction
+      </a>
     </li>
   
 
@@ -378,15 +378,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#event-set" class="md-nav__link">
-    Event Set
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-cursor" class="md-nav__link">
-    Adding Cursor
+  <a href="#adding-geometries" class="md-nav__link">
+    Adding Geometries
   </a>
   
 </li>
@@ -406,98 +406,76 @@
                   
 
 
-<h1 id="interaction">Interaction</h1>
-<h2 id="event-set">Event Set</h2>
-<p>You can add interaction to Aframe with an <code>event-set</code> component. This component is an additional script, which has to be linked in the <code>&lt;head&gt;</code> tag. Let’s start by adding the <code>event-set</code> script inside the <code>&lt;head&gt;</code> tag.</p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="getting-started">Getting Started</h2>
+<p>Aframe is an HTML-based framework that can be used to create WebXR applications through simple HTML scripting. Because it uses HTML as its interface, every command can be accessed by simply inserting its html tag.
+Let's start with a basic html structure and insert <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tag.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://aframe.io/releases/1.3.0/aframe.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">&lt;</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      <span class="p">&lt;</span><span class="nt">a-box</span> <span class="na">position</span><span class="o">=</span><span class="s">&quot;0 0 -5&quot;</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a-box</span><span class="p">&gt;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>To create interactive object with <code>event-set</code>, we have to add <code>event-set</code> as an attribute inside an entity or a component. The general structure of <code>event-set</code> follows this convention:</p>
-<p><code>&lt;a-entity event-set__${id}="_event: ${eventName}; ${someProperty}: ${toValue}"&gt;</code></p>
-<p>For instance, we can use <code>event-set</code> to tell Aframe to change the box color into green upon hovering the mouse cursor. Hence, if we would like to add an interaction to our box that change its color upon mouse hovering, the code would look like this:</p>
+<p>To access Aframe, we need to link it through <code>&lt;script&gt;</code> tag inside the <code>&lt;head&gt;</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://aframe.io/releases/1.3.0/aframe.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="p">&lt;</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      <span class="p">&lt;</span><span class="nt">a-box</span> <span class="na">position</span><span class="o">=</span><span class="s">&quot;0 0 -5&quot;</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">event-set__color</span><span class="o">=</span><span class="s">&quot;_event: mouseenter; color: green&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a-box</span><span class="p">&gt;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Notice that the interaction is triggered by the <code>event</code> parameter inside <code>event-set</code> attribute. It is also important to know that <code>event-set</code> must have unique identifier. In this case, we name the attribute as <code>event-set__color</code>. The word <strong>color</strong> that comes after <code>event-set__</code> could be anything. Just make sure that this id is unique to the event-set attribute for the whole document.</p>
-<h2 id="adding-cursor">Adding Cursor</h2>
-<p>After adding the event-set attribute, we also need to add cursor into the <code>&lt;a-scene&gt;</code> to allow Aframe to create "camera cursor" that will be able to interact with the object. So, the complete script would be as follow:</p>
+<h2 id="adding-geometries">Adding Geometries</h2>
+<p>Inside the <code>&lt;body&gt;</code> tag, we should add <code>&lt;a-scene&gt;</code> tag. It is required to define the area where we create an Aframe scene. Note that the Aframe tag is similar to regular html tag, but it is preceded with <strong>"a"</strong>. Next, we can start by inserting several objects. Let’s start by adding primitive geometries into the scene.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://aframe.io/releases/1.3.0/aframe.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="p">&lt;</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>      <span class="p">&lt;</span><span class="nt">a-box</span> <span class="na">position</span><span class="o">=</span><span class="s">&quot;0 0 -5&quot;</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">event-set__color</span><span class="o">=</span><span class="s">&quot;_event: mouseenter; color: green&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a-box</span><span class="p">&gt;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>      <span class="p">&lt;</span><span class="nt">a-camera</span><span class="p">&gt;</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="p">&lt;</span><span class="nt">a-cursor</span><span class="p">&gt;&lt;/</span><span class="nt">a-cursor</span><span class="p">&gt;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>      <span class="p">&lt;/</span><span class="nt">a-camera</span><span class="p">&gt;</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="p">&lt;</span><span class="nt">a-scene</span><span class="p">&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>      <span class="p">&lt;</span><span class="nt">a-box</span><span class="p">&gt;&lt;/</span><span class="nt">a-box</span><span class="p">&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>There are several command that we can use to trigger <code>_event</code>. The lists are described in the table below:</p>
-<table>
-<thead>
-<tr>
-<th><strong><code>_event</code></strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>click</td>
-<td>trigger the event when the object is clicked</td>
-</tr>
-<tr>
-<td>mouseenter</td>
-<td>trigger the event when the camera cursor hover over the object</td>
-</tr>
-<tr>
-<td>mouseleave</td>
-<td>trigger the event when the camera cursor leave the object</td>
-</tr>
-<tr>
-<td>mousedown</td>
-<td>trigger the event when the camera cursor hover over the object and the mouse button was pressed</td>
-</tr>
-<tr>
-<td>mouseup</td>
-<td>trigger the event when the camera cursor hover over the object and the mouse button was released</td>
-</tr>
-<tr>
-<td>fusing</td>
-<td>trigger the event when the camera cursor hover over the object after the countdown ends</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition sample project">
-<p class="admonition-title">Sample</p>
-<p>Check out the sample project in the following link:</p>
-<p><a href="https://aframe-toy-interaction.glitch.me/">Simple Interaction</a></p>
+<p>In the example above, I added a primitive box inside the scene. When we try to run the page in the browser, we might not be able to see anything. First, we have not defined the color so the object looks white like the background. Second, the object is not directly visible to the camera. We have to rotate the camera to be able to see the primitive box.
+Next, let’s add color and change the position of the box. I will add <code>position</code> and <code>color</code> as an attribute of <code>&lt;a-box&gt;</code> tag. The position follows the coordinates of <code>x y z</code>. I will set the z coordinate -5 from the default position.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://aframe.io/releases/1.3.0/aframe.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">&lt;</span><span class="nt">a-scene</span><span class="p">&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      <span class="p">&lt;</span><span class="nt">a-box</span> <span class="na">position</span><span class="o">=</span><span class="s">&quot;0 0 -5&quot;</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a-box</span><span class="p">&gt;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Now if we refresh the page, we would be able to see a red box. Notice that by changing the z coordinate, we move the box backward (hence the negative value) from the default camera position.</p>
+<p>There are several other primitive geometries that you can insert into Aframe. You can check the list and their attributes in the documentation page. Play around with primitives and their attributes to get the hang of creating objects with Aframe!</p>
+<div class="admonition aframe documentation">
+<p class="admonition-title">Aframe</p>
+<p>Check out the full documentation on Aframe in the link below.</p>
+<p><a href="https://aframe.io/docs/1.3.0/introduction/" target="_blank">A-frame 1.3.0 Documentation</a></p>
+<p>Check the left bar (if you open the page on a desktop), then scroll down to PRIMITIVES section. Pay attention that different primitive geometries have their own attributes.</p>
 </div>
+<p>List of PRIMITIVES geometries:</p>
+<ul>
+<li><code>&lt;a-box&gt;</code></li>
+<li><code>&lt;a-circle&gt;</code></li>
+<li><code>&lt;a-cylinder&gt;</code></li>
+<li><code>&lt;a-octahedron&gt;</code></li>
+<li><code>&lt;a-plane&gt;</code></li>
+<li><code>&lt;a-ring&gt;</code></li>
+<li><code>&lt;a-sphere&gt;</code></li>
+<li><code>&lt;a-tetrahedron&gt;</code></li>
+<li><code>&lt;a-torus-knot&gt;</code></li>
+<li><code>&lt;a-torus&gt;</code></li>
+<li><code>&lt;a-triangle&gt;</code></li>
+</ul>
 
 
 
@@ -518,7 +496,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Definition" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -527,20 +505,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Getting Started
+              Definition
             </div>
           </div>
         </a>
       
       
         
-        <a href="../target/" class="md-footer__link md-footer__link--next" aria-label="Next: Target Interaction" rel="next">
+        <a href="../interaction/" class="md-footer__link md-footer__link--next" aria-label="Next: Interaction" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Target Interaction
+              Interaction
             </div>
           </div>
           <div class="md-footer__button md-icon">
